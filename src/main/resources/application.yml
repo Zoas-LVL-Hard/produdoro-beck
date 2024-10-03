@@ -1,0 +1,10 @@
+server:
+  servlet:
+    context-path: /produdoro/api
+
+spring:
+  data:
+    mongodb:
+      authentication-database: admin
+      uri: ${MONGO_DB_URI:mongodb+srv://victormotaxd:familiamota123@pomodoro.5mf9u.mongodb.net/pomodoro?retryWrites=true&w=majority&appName=pomodoro}
+      auto-index-creation: true
