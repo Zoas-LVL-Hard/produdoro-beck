@@ -1,0 +1,34 @@
+package dev.wakandaacademy.produdoro.tarefa.domain;
+
+import java.util.UUID;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@Document(collection = "Tarefa")
+@Getter
+
+public class Tarefa {
+    @Id
+    private UUID idTarefa;
+    private String nome;
+    private String descricao;
+    @Indexed
+    private UUID idUsuario;
+    @Indexed
+    private UUID idProjeto;
+    @Indexed
+    private UUID idArea;
+    @Builder.Default
+    private StatusTarefa status = StatusTarefa.A_FAZER;
+}
