@@ -26,4 +26,4 @@ public class Area {
     @Indexed
     private UUID idUsuario;
 
-}
+} 

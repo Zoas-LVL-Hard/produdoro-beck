@@ -5,7 +5,7 @@ import java.util.UUID;
 import javax.validation.constraints.Email;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
+//import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AccessLevel;
@@ -23,7 +23,7 @@ public class Usuario {
     @Id
     private UUID idUsuario;
     @Email
-    @Indexed
+    //@Indexed
     private String email;
     private ConfiguracaoUsuario configuracao;
     @Builder.Default
