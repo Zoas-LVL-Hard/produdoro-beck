@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Document(collection = "ConfiguracaoPadraoPomodoro")
 @Getter
 
-//! Configuração Padrão do pomodoro (status)
+//TODO Configuração Padrão do pomodoro (status)
 public class ConfiguracaoPadrao {
     private static final String CODIGO_DEFAULT = "DEFAULT";
     @Builder.Default
@@ -26,5 +26,8 @@ public class ConfiguracaoPadrao {
     private Integer tempoPausaCurta;
     private Integer tempoPausaLonga;
     private Integer repeticoesPausaLonga;
-
+    
+    public ConfiguracaoPadrao(ConfiguracaoPadrao configuracaoPadrao) {
+        
+    }
 }
