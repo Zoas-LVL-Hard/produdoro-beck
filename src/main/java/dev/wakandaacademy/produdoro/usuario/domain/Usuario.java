@@ -24,17 +24,18 @@ public class Usuario {
     @Id
     private UUID idUsuario;
     @Email
-    @Indexed
+    @Indexed(unique = true)
     private String email;
     private ConfiguracaoUsuario configuracao;
     @Builder.Default
     private StatusUsuario status = StatusUsuario.FOCO;
     @Builder.Default
     private Integer quantidadePomodorosPausaCurta = 0;
-    
+
     public Usuario(UsuarioNovoRequest usuarioNovo, ConfiguracaoPadrao configuracaoPadrao) {
-            this.email = usuarioNovo.getEmail();
-            this.status = StatusUsuario.FOCO;
-            this.configuracao = new ConfiguracaoUsuario(configuracaoPadrao);
+        this.idUsuario = UUID.randomUUID();
+        this.email = usuarioNovo.getEmail();
+        this.status = StatusUsuario.FOCO;
+        this.configuracao = new ConfiguracaoUsuario(configuracaoPadrao);
     }
 }
